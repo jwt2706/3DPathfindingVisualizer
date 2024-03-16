@@ -1,7 +1,9 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-function main(mazeWidth, mazeHeight, mazeDepth) {
+const scene = new THREE.Scene();
+
+window.main = function(mazeWidth, mazeHeight, mazeDepth) {
   function generateRandomMaze() {
     const maze = [];
   
@@ -79,7 +81,7 @@ function main(mazeWidth, mazeHeight, mazeDepth) {
     renderer.render(scene, camera);
   }
   
-  function dfs(x, y, z) {
+  async function dfs(x, y, z) {
     // check if the current position is out of bounds or a wall
     if (x < 0 || y < 0 || z < 0 || x >= mazeWidth || y >= mazeHeight || z >= mazeDepth || maze[z][y][x] === '#' || maze[z][y][x] === 'v') {
       return false;
@@ -105,9 +107,12 @@ function main(mazeWidth, mazeHeight, mazeDepth) {
       [0, 0, -1], // backward
       [0, 0, 1]   // forward
     ];
-  
+    
+    // deplay for visual effect
+    await new Promise(resolve => setTimeout(resolve, 50));
+
     for (const [dx, dy, dz] of directions) {
-      if (dfs(x + dx, y + dy, z + dz)) {
+      if (await dfs(x + dx, y + dy, z + dz)) {
         return true;
       }
     }
@@ -120,7 +125,6 @@ function main(mazeWidth, mazeHeight, mazeDepth) {
 
   // *** main script below ***
   
-  const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer();
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -157,4 +161,11 @@ function main(mazeWidth, mazeHeight, mazeDepth) {
 
   dfs(startX, startY, startZ);
 }
-window.main = main;
+
+window.reset = function(width, height, depth) {
+  // Clear the previous maze
+  while(scene.children.length > 0){ 
+    scene.remove(scene.children[0]); 
+  }
+  main(width, height, depth);
+}
