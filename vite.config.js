@@ -10,5 +10,10 @@ export default defineConfig({
         main: 'index.html',
       },
     },
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
   },
 });
