@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "./node_modules/.bin/vite",
     "preview": "./node_modules/.bin/vite preview",
-    "build": "./node_modules/.bin/vite build"
+    "build": "./node_modules/.bin/vite build && cp robots.txt dist/"
   },
   "repository": {
     "type": "git",
