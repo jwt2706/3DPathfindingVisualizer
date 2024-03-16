@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 const scene = new THREE.Scene();
 const renderer = new THREE.WebGLRenderer();
 
-export function main(mazeWidth, mazeHeight, mazeDepth) {
+export function main(mazeWidth, mazeHeight, mazeDepth, wallIntensity) {
   function generateRandomMaze() {
     const maze = [];
   
@@ -14,7 +14,7 @@ export function main(mazeWidth, mazeHeight, mazeDepth) {
         const row = [];
         for (let x = 0; x < mazeWidth; x++) {
           // randomly decide if this cell is a wall or not
-          row.push(Math.random() < 0.2 ? '#' : ' ');
+          row.push(Math.random() < wallIntensity ? '#' : ' ');
   
           // set the start and end points
           if (x === startX && y === startY && z === startZ) {
@@ -163,7 +163,7 @@ export function main(mazeWidth, mazeHeight, mazeDepth) {
   dfs(startX, startY, startZ);
 }
 
-export function reset(width, height, depth) {
+export function reset(width, height, depth, intensity) {
   // Clear the previous maze
   const oldCanvas = document.querySelector('canvas');
   if (oldCanvas) {
@@ -173,5 +173,5 @@ export function reset(width, height, depth) {
   while(scene.children.length > 0){ 
     scene.remove(scene.children[0]); 
   }
-  main(width, height, depth);
+  main(width, height, depth, intensity);
 }
