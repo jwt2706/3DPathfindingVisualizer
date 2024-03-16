@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Maze Pathfinding</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
+  <script type="module" crossorigin src="/assets/main-BaplDvpU.js"></script>
+</head>
+<body onload="main(9, 9, 9)">
+  <div>
+    <label for="mazeWidth">Width:</label>
+    <input type="number" id="mazeWidth" value="9" min="3">
+    <label for="mazeHeight">Height:</label>
+    <input type="number" id="mazeHeight" value="9" min="3">
+    <label for="mazeDepth">Depth:</label>
+    <input type="number" id="mazeDepth" value="9" min="3">
+    <button onclick="reset(document.getElementById('mazeWidth').value, document.getElementById('mazeHeight').value, document.getElementById('mazeDepth').value)">Generate and Solve Maze</button>
+  </div>
+</body>
+</html>
