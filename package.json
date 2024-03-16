@@ -1,0 +1,23 @@
+{
+  "name": "3dmaze",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "maze.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwt2706/3DMazePathfinding.git"
+  },
+  "author": "jwt2706",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jwt2706/3DMazePathfinding/issues"
+  },
+  "homepage": "https://github.com/jwt2706/3DMazePathfinding#readme",
+  "dependencies": {
+    "vite": "^5.1.6"
+  }
+}
