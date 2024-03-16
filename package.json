@@ -1,11 +1,13 @@
 {
-  "name": "3dmaze",
+  "name": "3dmazepathfinding",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "Generates a 3D maze and solves it visually",
   "main": "maze.js",
   "scripts": {
-    "dev": "./node_modules/.bin/vite"
+    "dev": "./node_modules/.bin/vite",
+    "preview": "./node_modules/.bin/vite preview",
+    "build": "./node_modules/.bin/vite build"
   },
   "repository": {
     "type": "git",
