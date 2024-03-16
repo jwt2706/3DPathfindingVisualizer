@@ -127,6 +127,7 @@ export function main(mazeWidth, mazeHeight, mazeDepth) {
   // *** main script below ***
 
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
   const controls = new OrbitControls(camera, renderer.domElement);
   const pathMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff });
   const pathGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5); // Smaller cube for the path
