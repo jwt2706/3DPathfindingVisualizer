@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Maze Pathfinding</title>
   <style>
-    body { margin: 0; }
+    body { 
+      margin: 0;
+      overflow: hidden;
+    }
     canvas { display: block; }
   </style>
 </head>
@@ -19,6 +22,11 @@
     <input type="number" id="mazeDepth" value="9" min="3">
     <button onclick="reset(document.getElementById('mazeWidth').value, document.getElementById('mazeHeight').value, document.getElementById('mazeDepth').value)">Generate and Solve Maze</button>
   </div>
-  <script type="module" src="/maze.js"></script>
+  <script type="module">
+    import { main, reset } from './maze.js';
+  
+    window.main = main;
+    window.reset = reset;
+  </script>
 </body>
 </html>

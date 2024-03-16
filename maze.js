@@ -2,8 +2,9 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 const scene = new THREE.Scene();
+const renderer = new THREE.WebGLRenderer();
 
-window.main = function(mazeWidth, mazeHeight, mazeDepth) {
+export function main(mazeWidth, mazeHeight, mazeDepth) {
   function generateRandomMaze() {
     const maze = [];
   
@@ -124,9 +125,11 @@ window.main = function(mazeWidth, mazeHeight, mazeDepth) {
   }
 
   // *** main script below ***
+
+  
   
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer();
+
   const controls = new OrbitControls(camera, renderer.domElement);
   const pathMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff });
   const pathGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5); // Smaller cube for the path
@@ -162,8 +165,13 @@ window.main = function(mazeWidth, mazeHeight, mazeDepth) {
   dfs(startX, startY, startZ);
 }
 
-window.reset = function(width, height, depth) {
+export function reset(width, height, depth) {
   // Clear the previous maze
+  const oldCanvas = document.querySelector('canvas');
+  if (oldCanvas) {
+    document.body.removeChild(oldCanvas);
+  }
+  document.body.appendChild(renderer.domElement);
   while(scene.children.length > 0){ 
     scene.remove(scene.children[0]); 
   }
