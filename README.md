@@ -17,3 +17,5 @@ This project is licensed under the Apache-2.0 License.
 - find shortest possible path
 - increase transparency of blocks that are in the way of the camera
 - maybe ability to toggle visibility of some blocks
+- throw message if the maze is impossible (which can happen since the generation is random)
+- fix bugs

@@ -1,0 +1,51 @@
+$bg-color: rgba(255, 255, 255, 0.8);
+$font-size: 18px;
+$breakpoint: 650px;
+
+body {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+canvas {
+  display: block;
+}
+
+.container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: $bg-color;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.notification {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #444;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  font-size: $font-size;
+  opacity: 0;
+}
+
+.notification.show {
+  display: block;
+  opacity: 1;
+}
+
+.item {
+  font-size: $font-size;
+  padding: 5px;
+  display: inline-block;
+
+  @media (max-width: $breakpoint) {
+    display: block;
+  }
+}
