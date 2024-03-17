@@ -1,6 +1,6 @@
 # 3D Maze Pathfinding
 
-This is a 3D maze generator and pathfinding visualizer. It generates a random 3D maze and uses the depth-first search (DFS) algorithm to find a path from a random start point (white cube) to a random end point (red cube) while navigating around walls (green cubes). The path is visualized with the smaller blue cubes. Built With [Three.js](https://threejs.org/) - JavaScript 3D library.
+This is a 3D maze generator and pathfinding visualizer. It generates a random 3D maze and uses the depth-first search (DFS) algorithm to find a path from a random start point (white cube) to a random end point (red cube) while navigating around walls (green cubes). The path is visualized with the smaller blue cubes. Built with [Three.js](https://threejs.org/), a JavaScript 3D library.
 
 Visit [here](https://jwt2706.ca/3DMazePathfinding) to try it out!
 
