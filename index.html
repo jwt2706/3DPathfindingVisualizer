@@ -5,45 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A 3D maze pathfinding visualization. Generate a 3D maze and visualize the pathfinding algorithm in action.">
   <title>3D Maze Pathfinding</title>
-  <style>
-    body { 
-      margin: 0;
-      overflow: hidden;
-      position: relative;
-    }
-    canvas { display: block; }
-    .container {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 10px;
-      border-radius: 5px;
-    }
-    .item {
-      font-size: 18px;
-      padding: 5px;
-      display: inline-block;
-    }
-    @media (max-width: 650px) {
-      .item {
-        display: block;
-      }
-    }
-  </style>
-  <script type="module" crossorigin src="/3DMazePathfinding/assets/main-XI5Lfv-V.js"></script>
+  <script type="module" crossorigin src="/3DMazePathfinding/assets/main-D28AjTYG.js"></script>
+  <link rel="stylesheet" crossorigin href="/3DMazePathfinding/assets/main-BBjYhFB8.css">
 </head>
 <body>
   <div class="container">
-    <label for="mazeWidth" class="item">Width:</label>
-    <input type="number" id="mazeWidth" value="9" min="3" class="item">
-    <label for="mazeHeight" class="item">Height:</label>
-    <input type="number" id="mazeHeight" value="9" min="3" class="item">
-    <label for="mazeDepth" class="item">Depth:</label>
-    <input type="number" id="mazeDepth" value="9" min="3" class="item">
-    <label for="wallIntensity" class="item">Wall Intensity:</label>
-    <input type="range" id="wallIntensity" value="0.2" min="0.2" max="0.5" step="0.01" class="item">
-    <button id="generateButton" class="item">Generate and Solve Maze</button>
+    <button id="toggleControls" class="item">View Controls</button>
+    <div id="controls">
+      <label for="mazeWidth" class="item">Width:</label>
+      <input type="number" id="mazeWidth" value="9" min="3" max="18" class="item">
+      <label for="mazeHeight" class="item">Height:</label>
+      <input type="number" id="mazeHeight" value="9" min="3" max="18" class="item">
+      <label for="mazeDepth" class="item">Depth:</label>
+      <input type="number" id="mazeDepth" value="9" min="3" max="18" class="item">
+      <label for="wallIntensity" class="item">Wall Intensity:</label>
+      <input type="range" id="wallIntensity" value="0.2" min="0.2" max="0.5" step="0.01" class="item">
+      <button id="generateButton" class="item">Generate and Solve Maze</button>
+    </div>
+    <div id="notification" class="notification">Path Found!</div>
   </div>
 </body>
 </html>
