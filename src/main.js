@@ -15,5 +15,10 @@ document.getElementById('toggleControls').addEventListener('click', function() {
 });
 
 document.getElementById('generateButton').addEventListener('click', () => {
-  reset(document.getElementById('mazeWidth').value, document.getElementById('mazeHeight').value, document.getElementById('mazeDepth').value, document.getElementById('wallIntensity').value);
+  reset(
+    document.getElementById('mazeWidth').value,
+    document.getElementById('mazeHeight').value,
+    document.getElementById('mazeDepth').value,
+    document.getElementById('wallIntensity').value
+  );
 });
