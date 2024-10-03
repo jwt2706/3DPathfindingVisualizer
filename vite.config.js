@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/3DMazePathfinding/',
+  base: '/3DPathfindingVisualizer/',
   build: {
     outDir: 'dist',
     assetsInclude: ['**/*.txt'],
